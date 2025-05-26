@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function () {
+
 // 자바스크립트 코드: URL 파라미터 읽기
 const params = new URLSearchParams(window.location.search);
 const category = params.get('category'); // 예: "contest", 없으면 "전체 보기"
@@ -10,6 +12,10 @@ const categoryMap = {
 
 document.getElementById('category-title').innerText =
   '카테고리: ' + (categoryMap[category] || '전체');
+
+document.getElementById('breadcrumb-category').innerText =
+categoryMap[category] || '전체 보기';
+});
 
   // 전체 보기일 경우: /api/documents
   // 카테고리 있을 경우: /api/documents/search?... 호출
