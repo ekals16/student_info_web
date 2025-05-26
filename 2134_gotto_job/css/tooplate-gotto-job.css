@@ -304,7 +304,7 @@ nav[aria-label="breadcrumb"] {
 -----------------------------------------*/
 .custom-text-block {
   background: var(--primary-color);
-  padding: 80px 60px;
+  padding: 55px 45px;
   height: 100%;
 }
 
