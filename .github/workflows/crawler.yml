@@ -24,4 +24,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: 크롤러 실행
-        run: python contestkorea_crawler.py
+        run: python crawler.py
