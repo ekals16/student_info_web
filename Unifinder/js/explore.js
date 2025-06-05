@@ -51,7 +51,7 @@ function renderResults(dataMap, category, categoryMap) {
               `).join('')}
             </div>
             <div class="job-section-btn-wrap">
-              <a href="details.html?source=${encodeURIComponent(item.source)}" class="custom-btn btn">자세히 보기</a>
+              <a href="details.html?source=${encodeURIComponent(item.source)}&category=${category}" class="custom-btn btn">자세히 보기</a>
             </div>
           </div>
         </div>
