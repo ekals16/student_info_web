@@ -30,7 +30,7 @@ function renderResults(dataMap, category, categoryMap) {
         <div class="job-body d-flex flex-wrap flex-auto justify-content-between align-items-start ms-4 w-100">
           <div class="mb-3 flex-grow-1">
             <h4 class="job-title mb-lg-0">
-              <a href="${item.source}" class="job-title-link"> [${categoryMap[category] || '전체'}] ${item.title}</a>
+              <a href="details.html?source=${encodeURIComponent(item.source)}" class="job-title-link"> [${categoryMap[category] || '전체'}] ${item.title}</a>
             </h4>
             <p class="job-location mb-1">
               <i class="custom-icon bi-geo-alt me-1"></i> ${item.host}
@@ -51,7 +51,7 @@ function renderResults(dataMap, category, categoryMap) {
               `).join('')}
             </div>
             <div class="job-section-btn-wrap">
-              <a href="${item.source}" class="custom-btn btn">자세히 보기</a>
+              <a href="details.html?source=${encodeURIComponent(item.source)}" class="custom-btn btn">자세히 보기</a>
             </div>
           </div>
         </div>
