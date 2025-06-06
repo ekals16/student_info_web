@@ -977,13 +977,6 @@ nav[aria-label="breadcrumb"] {
   opacity: 0.05;
 }
 
-.reviews-body p {
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: var(--dark-color);
-}
-
-
 /*---------------------------------------
   JOB              
 -----------------------------------------*/

@@ -122,18 +122,28 @@ Bootstrap 5 HTML CSS Template
 
             <!-- 상세 내용 표시할 본문 영역 -->
   <section class="job-detail-section section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-12">
-          <h2 id="detail-title">제목</h2>
-          <p><strong>주최:</strong> <span id="detail-host"></span></p>
-          <p><strong>대상:</strong> <span id="detail-target"></span></p>
-          <p><strong>접수기간:</strong> <span id="detail-period"></span></p>
-          <p><strong>카테고리:</strong> <span id="detail-category"></span></p>
-        </div>
+  <div class="container">
+    <h2 id="detail-title" class="mb-5">공모전 제목</h2>
+    <div class="row">
+      <div class="col-lg-5 mb-4">
+        <img id="detail-image" src="" alt="포스터 이미지" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>주최:</strong> <span id="detail-host"></span></li>
+          <li class="list-group-item"><strong>대상:</strong> <span id="detail-target"></span></li>
+          <li class="list-group-item"><strong>접수 기간:</strong> <span id="detail-period"></span></li>
+          <li class="list-group-item"><strong>심사 기간:</strong> <span id="detail-eval"></span></li>
+          <li class="list-group-item"><strong>장소:</strong> <span id="detail-location"></span></li>
+          <li class="list-group-item"><strong>시상 내역:</strong> <span id="detail-prize"></span></li>
+          <li class="list-group-item"><strong>접수 방법:</strong> <span id="detail-method"></span></li>
+          <li class="list-group-item"><strong>참가비용:</strong> <span id="detail-entry"></span></li>
+          <li class="list-group-item"><strong>홈페이지:</strong> <a id="detail-source" href="#" target="_blank">공고 바로가기</a></li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
         
         </main>
 
