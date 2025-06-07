@@ -2,181 +2,97 @@ package com.example.student_info_backend;
 
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.CreationTimestamp;
 
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@JsonIgnoreProperties(ignoreUnknown = true) // 선언된 변수만 사용하게 함.
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 public class Document {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String title;
-	private String image;
-	private String category;
-	private String target;
-	private String host;
-	private String field;
-	private String submission_period;
-	private String evaluation_period;
-	private String location;
-	private String prize;
+    private String title;
+    private String host;
+    private String category;
+    private String target;
 
-	private String source;
-	private String submission_method;
-	private String entry_fee;
-	private String keyword;
-	@Column(columnDefinition = "MEDIUMTEXT")
-	private String content;
+    @JsonProperty("image")
+    private String imageUrl;
 
-	private LocalDateTime cTime; // 정렬을 위해(최신순)
+    @JsonProperty("application_period")
+    private String applicationPeriod;
 
-	public Document() {
-	}
+    @JsonProperty("evaluation_period")
+    private String evaluationPeriod;
 
-	public Document(String title, String image, String category, String target, String host, String field,
-			String submission_period, String evaluation_period, String location, String prize, String source,
-			String submission_method, String entry_fee, String keyword, String content, LocalDateTime cTime) {
-		super();
-		this.title = title;
-		this.image = image;
-		this.category = category;
-		this.target = target;
-		this.host = host;
-		this.field = field;
-		this.submission_period = submission_period;
-		this.evaluation_period = evaluation_period;
-		this.location = location;
-		this.prize = prize;
-		this.source = source;
-		this.submission_method = submission_method;
-		this.entry_fee = entry_fee;
-		this.keyword = keyword;
+    @JsonProperty("activity_period")
+    private String activityPeriod;
 
-		this.content = content;
-		this.cTime = cTime;
-	}
+    private String location;
+    private String benefits;
+    private String prize;
 
+    @JsonProperty("source")
+    private String sourceUrl;
 
-	public Long getId() {
-		return id;
-	}
+    @JsonProperty("application_method")
+    private String applicationMethod;
 
-	public String getCategory() {
-		return category;
-	}
+    @JsonProperty("apply")
+    private String applyUrl;
 
-	public String getTitle() {
-		return title;
-	}
+    @JsonProperty("entry_fee")
+    private String entryFee;
 
-	public String getHost() {
-		return host;
-	}
+    private String keyword;
+	@CreationTimestamp
+    private LocalDateTime cTime;
 
-	public String getField() {
-		return field;
-	}
+    public Document() {}
 
-	public String getContent() {
-		return content;
-	}
-
-	public String getSource() {
-		return source;
-	}
-
-	public String getKeyword() {
-		return keyword;
-	}
-
-	public LocalDateTime getCTime() {
-		return cTime;
-	}
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public String getSubmission_period() {
-		return submission_period;
-	}
-
-	public void setSubmission_period(String submission_period) {
-		this.submission_period = submission_period;
-	}
-
-	public String getEvaluation_period() {
-		return evaluation_period;
-	}
-
-	public void setEvaluation_period(String evaluation_period) {
-		this.evaluation_period = evaluation_period;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getPrize() {
-		return prize;
-	}
-
-	public void setPrize(String prize) {
-		this.prize = prize;
-	}
-
-	public String getSubmission_method() {
-		return submission_method;
-	}
-
-	public void setSubmission_method(String submission_method) {
-		this.submission_method = submission_method;
-	}
-
-	public String getEntry_fee() {
-		return entry_fee;
-	}
-
-	public void setEntry_fee(String entry_fee) {
-		this.entry_fee = entry_fee;
-	}
+    public Long getId() { return id; }
+    public String getTitle() { return title; }
+    public String getHost() { return host; }
+    public String getCategory() { return category; }
+    public String getTarget() { return target; }
+    public String getImageUrl() { return imageUrl; }
+    public String getApplicationPeriod() { return applicationPeriod; }
+    public String getEvaluationPeriod() { return evaluationPeriod; }
+    public String getActivityPeriod() { return activityPeriod; }
+    public String getLocation() { return location; }
+    public String getBenefits() { return benefits; }
+    public String getPrize() { return prize; }
+    public String getSourceUrl() { return sourceUrl; }
+    public String getApplicationMethod() { return applicationMethod; }
+    public String getApplyUrl() { return applyUrl; }
+    public String getEntryFee() { return entryFee; }
+    public String getKeyword() { return keyword; }
+    public LocalDateTime getCTime() { return cTime; }
 
     public void setId(Long id) { this.id = id; }
-    public void setCategory(String category) { this.category = category; }
     public void setTitle(String title) { this.title = title; }
     public void setHost(String host) { this.host = host; }
-    public void setField(String field) { this.field = field; }
-
-
-
-    public void setContent(String content) { this.content = content; }
-    public void setSource(String source) { this.source = source; }
+    public void setCategory(String category) { this.category = category; }
+    public void setTarget(String target) { this.target = target; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public void setApplicationPeriod(String applicationPeriod) { this.applicationPeriod = applicationPeriod; }
+    public void setEvaluationPeriod(String evaluationPeriod) { this.evaluationPeriod = evaluationPeriod; }
+    public void setActivityPeriod(String activityPeriod) { this.activityPeriod = activityPeriod; }
+    public void setLocation(String location) { this.location = location; }
+    public void setBenefits(String benefits) { this.benefits = benefits; }
+    public void setPrize(String prize) { this.prize = prize; }
+    public void setSourceUrl(String sourceUrl) { this.sourceUrl = sourceUrl; }
+    public void setApplicationMethod(String applicationMethod) { this.applicationMethod = applicationMethod; }
+    public void setApplyUrl(String applyUrl) { this.applyUrl = applyUrl; }
+    public void setEntryFee(String entryFee) { this.entryFee = entryFee; }
     public void setKeyword(String keyword) { this.keyword = keyword; }
-
-	public void setCTime(LocalDateTime cTime) {
-		this.cTime = cTime;
-	}
-
-	public String getTarget() {
-		return target;
-	}
-
-	public void setTarget(String target) {
-		this.target = target;
-	}
-
+    public void setCTime(LocalDateTime cTime) { this.cTime = cTime; }
 }

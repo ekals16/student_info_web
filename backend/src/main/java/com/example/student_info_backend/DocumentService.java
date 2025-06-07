@@ -14,29 +14,23 @@ public class DocumentService {
     }
 
     public Document save(Document doc) {
-        Optional<Document> existing = repository.findByTitleAndSource(doc.getTitle(), doc.getSource());
+		Optional<Document> existing = repository.findByTitleAndSourceUrl(doc.getTitle(), doc.getSourceUrl());
         return existing.orElseGet(() -> repository.save(doc));
+    }
+
+    public List<Document> saveAll(List<Document> docs) {
+        return repository.saveAll(docs);
     }
 
     public List<Document> getAll() {
         return repository.findAll();
     }
 
-    public List<Document> search(String keyword, String category, String field) {
-        if ((keyword == null || keyword.isEmpty()) &&
-            (category == null || category.isEmpty()) &&
-            (field == null || field.isEmpty())) {
-            return repository.findAll();
-        }
-        return repository.findByKeywordCategoryField(keyword, category, field);
-    }
-
     public Optional<Document> getById(Long id) {
         return repository.findById(id);
     }
 
-	public void deleteById(Long id) {
-		repository.deleteById(id);
-	}
-
+    public void deleteById(Long id) {
+        repository.deleteById(id);
+    }
 }
