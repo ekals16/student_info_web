@@ -1,6 +1,7 @@
 package com.example.student_info_backend;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,14 +25,25 @@ public class DocumentController {
     }
 
     @GetMapping
-    public List<Document> getAll() {
-        return service.getAll();
+	public List<Map<String, Object>> getAll() {
+		return service.getAll().stream().map(this::toSummary).toList();
+	}
+
+	private Map<String, Object> toSummary(Document doc) {
+		return Map.of("id", doc.getId(), "title", doc.getTitle(), "category", doc.getCategory());
     }
+
+	@GetMapping("/search")
+	public List<Document> search(@RequestParam(required = false) String keyword,
+			@RequestParam(required = false) String category, @RequestParam(required = false) String title) {
+		return service.search(keyword, category, title);
+	}
 
     @GetMapping("/{id}")
     public Optional<Document> getById(@PathVariable Long id) {
         return service.getById(id);
     }
+
 
     @PostMapping
     public Document save(@RequestBody Document doc) {

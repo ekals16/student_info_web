@@ -5,14 +5,17 @@ import java.time.LocalDateTime;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
 public class Document {
     @Id
@@ -23,6 +26,7 @@ public class Document {
     private String host;
     private String category;
     private String target;
+    private String code;
 
     @JsonProperty("image")
     private String imageUrl;
@@ -37,10 +41,13 @@ public class Document {
     private String activityPeriod;
 
     private String location;
+	@Column(columnDefinition = "TEXT")
     private String benefits;
+
+	@Column(columnDefinition = "TEXT")
     private String prize;
 
-    @JsonProperty("source")
+	@Column(name = "source_url", columnDefinition = "TEXT")
     private String sourceUrl;
 
     @JsonProperty("application_method")
@@ -76,7 +83,13 @@ public class Document {
     public String getEntryFee() { return entryFee; }
     public String getKeyword() { return keyword; }
     public LocalDateTime getCTime() { return cTime; }
+    public String getCode() {
+        return code;
+    }
 
+	public void setCode(String code) {
+		this.code = code;
+	}
     public void setId(Long id) { this.id = id; }
     public void setTitle(String title) { this.title = title; }
     public void setHost(String host) { this.host = host; }
