@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Unifinder data Listing</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/owl.carousel.min.css" rel="stylesheet">
+
+        <link href="css/owl.theme.default.min.css" rel="stylesheet">
+
+        <link href="css/tooplate-gotto-job.css" rel="stylesheet">
+        
+<!--
+
+Tooplate 2134 Gotto Job
+
+https://www.tooplate.com/view/2134-gotto-job
+
+Bootstrap 5 HTML CSS Template
+
+-->
+
+    </head>
+    
+    <body id="top">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" class="img-fluid logo-image">
+
+                    <div class="d-flex flex-column">
+                        <strong class="logo-text">Unifinder</strong>
+                        <small class="logo-slogan">탐색하고, 도전하고, 성장하세요.</small>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-center ms-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="about.html">About Gotto</a>
+                        </li>
+                        !-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">페이지</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="job-listings.html">전체 보기</a></li>
+
+                                <!--<li><a class="dropdown-item" href="job-details.html">Job Details</a></li>!-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+
+            <header class="site-header">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-lg-12 col-12 text-center">
+                            <h1 class="text-white" id="category-title">카테고리</h1>
+
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-category">전체 보기</li>
+                                </ol>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <section class="section-padding pb-0 d-flex justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <form class="custom-form hero-form" action="#" method="get" role="form">
+                                <h3 class="text-white mb-3" id="search-heading">원하는 대회&middot;공모전을 찾아보세요</h3>
+                                
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><i class="bi-search custom-icon"></i></span>
+
+                                            <input type="text" name="job-title" id="job-title" class="form-control" placeholder="찾고 싶은 대회/공모전 이름" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><i class="bi-bullseye custom-icon"></i></span>
+
+                                            <select class="form-select form-control" name="job-salary" id="category-options" aria-label="Default select example">
+                                                <option selected>대회/공모전</option>
+                                                <option value="1">문학&middot;문예</option>
+                                                <option value="2">네이밍&middot;슬로건</option>
+                                                <option value="3">학문&middot;과학&middot;IT</option>
+                                                <option value="4">스포츠</option>
+                                                <option value="5">미술&middot;디자인&middot;웹툰</option>
+                                                <option value="6">음악&middot;콩쿠르&middot;댄스</option>
+                                                <option value="7">사진&middot;영상&middot;영화제</option>
+                                                <option value="8">아이디어&middot;건축&middot;창업</option>
+                                                <option value="9">요리&middot;뷰티&middot;배우&middot;오디션</option>
+                                                <option value="10">그외</option>
+                                                <option value="11">전체 대회/공모전 현황</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-12 mb-4">
+                                        <button type="button" id="search-button" class="form-control">검색하기</button>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="d-flex flex-wrap align-items-center mt-6 mt-lg-0">
+                                            <span class="text-white mb-lg-0 mb-md-0 me-2">인기 키워드:</span>
+
+                                            <div id="popular-keywords">
+                                                <a href="#" class="badge">에세이</a>
+
+                                                <a href="#" class="badge">창업</a>
+
+                                                <a href="#" class="badge">영상</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="job-section section-padding">
+                <div class="container">
+                    <!--제목, 정렬 드롭다운, 뷰 아이콘-->
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-12 mb-lg-4">
+                            <h3>최신 대회 &middot; 공모전</h3>
+                        </div>
+
+                        <div class="col-lg-4 col-12 d-flex align-items-center ms-auto mb-5 mb-lg-4">
+                            <p class="mb-0 ms-lg-auto">Sort by:</p>
+
+                            <div class="dropdown dropdown-sorting ms-3 me-4">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortingButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    최신순
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JS로 동적 삽입되는 결과 영역 -->
+                    <div class="row" id="job-results"></div>
+
+                    <div id="job-results"></div>
+
+                    <!--페이지네이션 동적 실행, 클릭 시 해당 항목을 보여줌-->
+                    <nav>
+                        <ul class="pagination justify-content-center mt-5" id="pagination"></ul>
+                    </nav>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-12 d-flex align-items-center">
+                            <p class="copyright-text">Copyright © Gotto Job 2048</p>
+
+                            <ul class="footer-menu d-flex">
+                                <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy Policy</a></li>
+
+                                <li class="footer-menu-item"><a href="#" class="footer-menu-link">Terms</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-5 col-12 mt-2 mt-lg-0">
+                            <ul class="social-icon">
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-linkedin"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-youtube"></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-12 mt-2 d-flex align-items-center mt-lg-0">
+                            <p>Design: <a class="sponsored-link" rel="sponsored" href="https://www.tooplate.com" target="_blank">Tooplate</a></p>
+                        </div>
+
+                        <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" href="#top"></a>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/explore.js"></script>
+
+    </body>
+</html>
