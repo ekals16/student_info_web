@@ -1,1 +1,0 @@
-# student_info_web
